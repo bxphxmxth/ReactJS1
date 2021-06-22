@@ -2,27 +2,33 @@ import React from "react";
 import DemoComponent from "../demoComponent"
 // import logo from "./logo.svg";
 import Navigation from "./navigation";
+import DisplayTime from "./displayTime";
 
 class Header extends React.Component{
+
+     currentPage = "heure";
+
+
      
      render(){
 
-          let dateCourante = new Date();
-           let tempsJavaScript = dateCourante.getTime();
-           let tempsPHP = tempsJavaScript/1000
+           let pageContent;
+           if(this.currentPage == "accueil"){
+               pageContent = <DemoComponent/>
+          }else{
+               pageContent = <DisplayTime/>
+          }
           return(
+               
                <header className="App-header">
                <Navigation />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p> Logo </p>
-        <DemoComponent/>
+        {this.currentPage}
+        {pageContent}
         
-        <p>Temps JavaScript: {tempsJavaScript} en milliseconde</p>
-
-
-        <p>Temps PHP: {tempsPHP} en milliseconde</p>
-
-        <p>Date pour un humain: {dateCourante.getDate()}/{dateCourante.getMonth()}/{dateCourante.getFullYear()}</p>
+        
+        
       </header>
           )
      }
