@@ -4,16 +4,16 @@ import './navigation.css'
 class Navigation extends React.Component {
 
 
-     monAction= () =>{
-          console.log("il y a eu un clic");
+     navigation= (destination) =>{
+          console.log("il y a eu un clic " + destination);
      }
 
      render(){
           return (
                <nav>
-                    <button onClick={this.monAction}>Accueil</button>
-                    <button>Heure</button>
-                    <button>Configuration</button>
+                    <button onClick={ () => this.navigation("accueil")}>Accueil</button>
+                    <button onClick={ () => this.navigation("heure")}>Heure</button>
+                    <button onClick={() =>this.navigation("configuration") }>Configuration</button>
 
                </nav>
           )
