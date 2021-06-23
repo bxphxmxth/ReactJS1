@@ -8,6 +8,8 @@ class Header extends React.Component{
 
      currentPage = "heure";
 
+     formatTime ="phpTime"
+
      onNavigationParent = (destination) =>{
           this.currentPage = destination;
           console.log(this.currentPage);
@@ -15,6 +17,7 @@ class Header extends React.Component{
 
      handleClick = (format) =>{
           console.log(format)
+          this.formatTime = format;
      }
 
 
