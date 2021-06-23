@@ -8,6 +8,8 @@ class DisplayTime extends React.Component {
      currentPage = "heure";
 
      render() {
+
+          console.log(this.props);
           let dateCourante = new Date();
           let tempsJavaScript = dateCourante.getTime();
           let tempsPHP = tempsJavaScript/1000;
@@ -22,7 +24,7 @@ class DisplayTime extends React.Component {
 
                     </p>
                     <p>
-                         date humain : {dateCourante.getDate()}/{dateCourante.getMonth()}/{dateCourante.getFullYear()}
+                         date humain : {dateCourante.getDate()}/{dateCourante.getMonth()+1}/{dateCourante.getFullYear()}
                     </p>
                </div>
           )

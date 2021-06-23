@@ -5,7 +5,7 @@ class Navigation extends React.Component {
 
 
      navigation= (destination) =>{
-          console.log("il y a eu un clic " + destination);
+          this.props.onNavigation(destination);
      }
 
      render(){
