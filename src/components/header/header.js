@@ -34,13 +34,18 @@ class Header extends React.Component{
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p> Logo </p>
         {this.currentPage}
-        {pageContent}
+        { this.currentPage == "accueil" && <DemoComponent/>}
+        {this.currentPage == "heure" && 
+
+
         <div>
-             {/* <DisplayTime format="phpTime"/> */}
+             <DisplayTime format="phpTime"/>
              <button onClick={() => this.handleClick("jsTime")}>Javascript</button>
              <button onClick={() => this.handleClick("phpTime")}>PHP</button>
              <button onClick={() => this.handleClick("humainTime")}>Humain</button>
         </div>
+        
+        }
         
         
         
